@@ -2,12 +2,12 @@ import {
   Character, Bowerman, Swordsman, Magician, Daemon, Undead, Zombie,
 } from '../app';
 
-const bowerman = new Bowerman('bowerman', 'Bowerman');
-const swordsman = new Swordsman('swordsman', 'Swordsman');
-const magician = new Magician('magician', 'Magician');
-const daemon = new Daemon('daemon', 'Daemon');
-const undead = new Undead('undead', 'Undead');
-const zombie = new Zombie('zombie', 'Zombie');
+const bowerman = new Bowerman('bowerman');
+const swordsman = new Swordsman('swordsman');
+const magician = new Magician('magician');
+const daemon = new Daemon('daemon');
+const undead = new Undead('undead');
+const zombie = new Zombie('zombie');
 
 const characterLevelUpList = [
   ['Bowerman', bowerman.levelUp(), 2],
@@ -48,11 +48,6 @@ function checkNoStringNameCharacter() {
   return numberCharacter;
 }
 
-function checkCharacterNoIncludes() {
-  const someMagic = new Magician('magician', 'SomeMagic');
-  return someMagic;
-}
-
 test('check leveUp function if health <= 0', () => {
   expect(() => {
     checkHealth();
@@ -68,11 +63,5 @@ test('check damage function if health = 0', () => {
 test('check function no string', () => {
   expect(() => {
     checkNoStringNameCharacter();
-  }).toThrow();
-});
-
-test('check function no includes character', () => {
-  expect(() => {
-    checkCharacterNoIncludes();
   }).toThrow();
 });
